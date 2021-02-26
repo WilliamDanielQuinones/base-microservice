@@ -1,0 +1,245 @@
+@import '../../global/scss/config';
+
+.app {
+    min-height:100vh;
+
+    .ant-layout {
+        background: $secondary-background-color !important;
+      }
+
+      &-header {
+        @include flex(row, center, center);
+        @include pad-box(0 24px);
+        height: initial;
+        line-height: 1em;
+        background-color: #26313c;
+        z-index:200;
+        //display:none;
+    
+        @media screen and (max-width:$screen-md-min) {
+          display: block;
+          @include pad-box(0 12px);
+        }
+    
+        &-menu-navigation {
+    
+        }
+    
+        &-mobile-menu {
+          @include font(14px, 500, 0, white);
+    
+          margin-left: 24px;
+          display:none;
+          @media screen and (max-width: $screen-md-min) {
+            display: block;
+          }
+          i {
+            margin-right:6px;
+          }
+          &-content {
+            .single-mobile-menu-item {
+              @include flex(row, flex-start, center);
+              @include pad-box(12px);
+              @include font(14px, 500, 0, $dark-gray);
+    
+              i {
+                color:$light-blue;
+              }
+            }
+          }
+        }
+    
+        &-account {
+          @include pad-box(18px);
+          margin-top: auto;
+          width: 100%;
+    
+          .avatar-container {
+            @include flex-center(column);
+            @include pad-box(12px);
+            position: relative;
+            background: $secondary-background-color;
+            border-radius: 5px;
+            transition: all 0.2s;
+    
+            .transformed {
+              @include flex-center(column);
+              width: 100%;
+    
+              .avatar {
+                background-color: $purple;
+              }
+    
+              .name {
+                margin-top: 12px;
+                @include font(14px, 500, 0, $dark-gray);
+              }
+              .email {
+                @include font(13px, 400, 0, $medium-gray);
+                margin-bottom: 12px;
+              }
+            }
+          }
+        }
+    
+        &-account-menu {
+          .single-action {
+            @include pad-box(12px 18px);
+            @include font(12px, 500, 0, $medium-gray);
+            @include flex(row, flex-start, center);
+            border-radius: 5px;
+    
+            transition: all 0.2s;
+    
+            .left {
+              color: $light-blue;
+            }
+    
+            .right {
+              margin-left: 12px;
+    
+              .title {
+                @include font(14px, 500, 0, $medium-gray);
+              }
+    
+              .description {
+                @include font(14px, 500, 0, $light-gray);
+              }
+            }
+    
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+    
+            &:hover {
+              background-color: $secondary-background-color;
+              cursor: pointer;
+            }
+          }
+        }
+    
+        .content {
+          @include flex(row, space-between, center);
+          @include pad-box(14px 0);
+    
+          @media screen and (max-width: $screen-md-min) {
+            @include pad-box(14px 24px);
+          }
+          max-width:1200px;
+          width:100%;
+    
+          .app-header-right {
+            @include flex(row, flex-start, center);
+            .icon {
+              display:flex;
+              margin-right:12px;
+              color:#6c90b5;
+            }
+    
+    
+            .user {
+              @include flex(row, flex-start, center);
+              @include pad-box(6px 12px);
+              border-radius: 5px;
+              transition: all 0.2s;
+    
+    
+              &:hover{
+                cursor: pointer;
+                transform: translate(0, -2px);
+                background:white;
+                .name {
+                  color:$dark-gray;
+                }
+              }
+              .name {
+                @include font(14px, 500, 0, white);
+                margin-left: 12px;
+                transition: all 0.2s;
+                @media screen and (max-width: $screen-md-min) {
+                  display:none;
+                  @include pad-box(14px 0);
+                }
+              }
+            }
+    
+          }
+    
+          .full-width-menu {
+              @include flex(row, flex-start, center);
+    
+              margin-left: 24px;
+              background: transparent;
+              border: none;
+    
+              @media screen and (max-width: $screen-md-min) {
+                display:none;
+              }
+    
+              .single-menu-item {
+                @include flex(row, flex-start, center);
+                @include pad-box(9px 18px);
+                @include font(14px, 500, 0, #66809a);
+                margin-right: 6px;
+                border-radius: 5px;
+                transition: all 0.2s;
+    
+                &:hover {
+                  &:not(.selected) {
+                    background: #2c3742;
+                    transform: translate(0, -2px);
+                  }
+    
+                  cursor: pointer;
+                }
+    
+                &.selected {
+                  background: #334250;
+                  color:white;
+                  i {
+                    color:$red;
+                  }
+                }
+    
+                &:last-of-type {
+                  margin-right: 0;
+                }
+    
+                .icon {
+                  font-size: 22px !important;
+                  margin-right: 9px;
+                }
+              }
+            }
+    
+          .app-header-left {
+            @include flex(row, flex-start, center);
+    
+            .logo {
+              @include flex(row, flex-start, center);
+              @include font(18px, 500, 0, white);
+              line-height: 1em;
+    
+              &:hover {
+                cursor: pointer;
+              }
+    
+              & svg {
+                width: 30px;
+                height: 30px;
+                margin-right: 12px;
+              }
+    
+              @media screen and (max-width: $screen-md-min) {
+                @include font(16px, 500, 0, white);
+                & svg {
+                  width: 20px;
+                  height: 20px;
+                  margin-right: 6px;
+                }
+              }
+            }
+          }
+        }
+      }
+}
