@@ -1,6 +1,6 @@
 {
-  "short_name": "administration",
-  "name": "administration",
+  "short_name": "app",
+  "name": "app",
   "icons": [
     {
       "src": "favicon.ico",
